@@ -1,7 +1,9 @@
 describe("Test Contact Us form via web store", () => {
     it("Should be able to submit a successful submission via contact us form", () => {
         cy.visit('https://www.automationteststore.com/')
-        cy.xpath('//a[contains(@href, "contact")]').click()
+        cy.xpath('//a[contains(@href, "contact")]').click().then((text) => {
+            cy.log(`This is the text ${text.text()}`)
+        })
         cy.get('#ContactUsFrm_first_name').type("aaa")
         cy.get('#ContactUsFrm_email').type("aaa@gmail.com").should("have.attr", "name", "email")
         cy.xpath('//textarea[@id="ContactUsFrm_enquiry"]').type("test comment")
