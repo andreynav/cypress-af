@@ -5,11 +5,9 @@ describe("Test Contact Us form via WebdriverUniversity", () => {
         cy.get('[name="last_name"]').type("bbb")
         cy.get('[name="email"]').type("aaa@gmail.com")
         cy.get('textarea.feedback-input').type("test comment")
-        cy.get('[type="submit"]').click().then(() => {
-            cy.location().should((loc) => {
-                expect(loc.pathname).to.eq("/Contact-Us/contact-form-thank-you.html")
-            })
-        })
+        cy.get('[type="submit"]').click()
+        cy.get('#contact_reply > h1').should("have.text", "Thank You for your Message!")
+        cy.url().should("include", "contact-form-thank-you")
     })
 
     it("Should not be able to submit a successful submission via contact us form as all fields are required", () => {
