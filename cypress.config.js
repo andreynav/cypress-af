@@ -7,5 +7,8 @@ module.exports = defineConfig({
     },
     specPattern: "cypress/e2e/**/*.{js,jsx,ts,tsx,feature}",
     defaultCommandTimeout: 7000,
+    chromeWebSecurity: false,
+    viewportWidth: 1000,
+    viewportHeight: 800,
   },
 });
