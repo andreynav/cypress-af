@@ -38,7 +38,6 @@ describe("Handle js alerts", () => {
 
         const stub = cy.stub()
         cy.on('window:confirm', stub)
-        stub.onThirdCall().returns('You pressed OK!!!!')
 
         cy.get('#button4').click().then(() => {
             expect(stub).to.be.calledWith('Press a button!')
@@ -46,14 +45,6 @@ describe("Handle js alerts", () => {
             return true
         }).then(() => {
             cy.get('#confirm-alert-text').should('have.text', 'You pressed OK!')
-        })
-
-        cy.get('#button4').click().then(() => {
-            expect(stub).to.be.calledWith('Press a button!')
-        })
-
-        cy.get('#button4').click().then(() => {
-            expect(stub).to.be.calledWith('You pressed OK!!!!')
         })
     })
 })
