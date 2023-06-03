@@ -6,12 +6,18 @@ declare namespace Cypress {
          * Select radio-button by the certain value and check it
          * @example cy.checkRadioButtonByVal('blue')
          */
-        checkRadioButtonByVal(value: string): Chainable<JQuery<HTMLElement>>
 
+        checkRadioButtonByVal(value: string): Chainable<JQuery<HTMLElement>>
         /**
          * Open a page in current browser tab instead of "target=_blank"
          * @example cy.openPageInCurrentTab('#dropdown-checkboxes')
          */
         openPageInCurrentTab(selector: string): Chainable<JQuery<HTMLElement>>
+
+        /**
+         * Open a page in current browser tab instead of "target=_blank"
+         * @example cy.selectAutoCompleteOption('#dropdown-checkboxes')
+         */
+        selectAutoCompleteOption(inputSel: string, submitSel: string, optionName: string): Chainable<JQuery<HTMLElement>>
     }
 }

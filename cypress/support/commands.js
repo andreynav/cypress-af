@@ -31,3 +31,17 @@ Cypress.Commands.add("checkRadioButtonByVal", (value) => {
 Cypress.Commands.add('openPageInCurrentTab', (selector) => {
     cy.get(selector).invoke('removeAttr', 'target').click({force: true})
 })
+
+Cypress.Commands.add('selectAutoCompleteOption', (inputSel, submitSel, optionName) => {
+    cy.get(inputSel).each((el) => {
+        const elementText = el.text()
+        const elToSelect = optionName
+
+        if (elementText === elToSelect) {
+            // cy.wrap(el).click()
+            el.trigger('click')
+            cy.get(submitSel).click()
+            cy.url().should('include', elToSelect)
+        }
+    })
+})
