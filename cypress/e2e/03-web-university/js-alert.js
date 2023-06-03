@@ -22,7 +22,7 @@ describe("Handle js alerts", () => {
 
     it("Validate js confirm alert box works correctly when clicking cancel", () => {
         cy.visit("http://www.webdriveruniversity.com")
-        cy.get('#popup-alerts').invoke('removeAttr', 'target').click({force:true})
+        cy.openPageInCurrentTab('#popup-alerts')
 
         cy.get('#confirm-alert-text').should('be.empty')
         cy.get('#button4').click()
@@ -34,7 +34,7 @@ describe("Handle js alerts", () => {
 
     it.only("Validate js confirm alert box using a stub", () => {
         cy.visit("http://www.webdriveruniversity.com")
-        cy.get('#popup-alerts').invoke('removeAttr', 'target').click({force:true})
+        cy.openPageInCurrentTab('#popup-alerts')
 
         const stub = cy.stub()
         cy.on('window:confirm', stub)

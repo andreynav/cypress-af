@@ -1,7 +1,7 @@
 describe("Verify checkboxes via webdriveruni", () => {
     it("Check the first checkbox", () => {
         cy.visit("http://www.webdriveruniversity.com")
-        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})
+        cy.openPageInCurrentTab('#dropdown-checkboxes-radiobuttons')
 
         const checkboxLocator = (index) => {
             return `#checkboxes > label:nth-of-type(${index}) > input`
@@ -13,7 +13,7 @@ describe("Verify checkboxes via webdriveruni", () => {
 
     it("Uncheck the third checkbox", () => {
         cy.visit("http://www.webdriveruniversity.com")
-        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})
+        cy.openPageInCurrentTab('#dropdown-checkboxes-radiobuttons')
 
         cy.get('#checkboxes > label:nth-of-type(3) > input').uncheck().as('thirdCheckbox')
         cy.get('@thirdCheckbox').should('not.be.checked')
@@ -21,7 +21,7 @@ describe("Verify checkboxes via webdriveruni", () => {
 
     it("Validate all checkboxes", () => {
         cy.visit("http://www.webdriveruniversity.com")
-        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})
+        cy.openPageInCurrentTab('#dropdown-checkboxes-radiobuttons')
 
         cy.get('#checkboxes > label > input').each((el, index) => {
             cy.wrap(el).should(`${[0, 1, 3].includes(index) ? 'not.be.checked' : 'be.checked'}`)
@@ -30,7 +30,7 @@ describe("Verify checkboxes via webdriveruni", () => {
 
     it("Check all checkboxes", () => {
         cy.visit("http://www.webdriveruniversity.com")
-        cy.get('#dropdown-checkboxes-radiobuttons').invoke('removeAttr', 'target').click({force:true})
+        cy.openPageInCurrentTab('#dropdown-checkboxes-radiobuttons')
 
         // cy.get('input:only-of-type').each((el) => {
         //     cy.wrap(el).check()

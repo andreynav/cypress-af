@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("checkRadioButtonByVal", (value) => {
+    cy.get('#radio-buttons').find(`input[value="${value}"]`).check()
+})
+
+Cypress.Commands.add('openPageInCurrentTab', (selector) => {
+    cy.get(selector).invoke('removeAttr', 'target').click({force: true})
+})
