@@ -1,7 +1,10 @@
 describe('Test File Upload via webdriveruni', () => {
-    it('Upload a file....', () => {
+    before(() => {
         cy.visit("http://www.webdriveruniversity.com")
         cy.openPageInCurrentTab('#file-upload')
+    })
+
+    it('Upload a file....', () => {
         cy.get('#myFile').selectFile('cypress/fixtures/laptop.png')
 
         const stub = cy.stub()
@@ -13,9 +16,6 @@ describe('Test File Upload via webdriveruni', () => {
     })
 
     it('Upload No file...', () => {
-        cy.visit("http://www.webdriveruniversity.com")
-        cy.openPageInCurrentTab('#file-upload')
-
         const stub = cy.stub()
         cy.on('window:alert', stub)
 

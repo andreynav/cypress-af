@@ -22,7 +22,7 @@ describe("Test Contact Us form via WebdriverUniversity", () => {
 
     it.only("Should be able open form on the same browser tab and submit a successful submission via contact us form", () => {
         cy.visit("https://www.webdriveruniversity.com")
-        cy.get('#contact-us').invoke('removeAttr', 'target').click()
+        cy.openPageInCurrentTab('#contact-us')
         cy.get('[name="first_name"]').type("aaa")
         cy.get('[name="last_name"]').type("bbb")
         cy.get('[name="email"]').type("aaa@gmail.com")
