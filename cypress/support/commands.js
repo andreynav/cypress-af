@@ -45,3 +45,25 @@ Cypress.Commands.add('selectAutoCompleteOption', (inputSel, submitSel, optionNam
         }
     })
 })
+
+Cypress.Commands.add('selectProduct', (selector, productName) => {
+    cy.get(selector).each((el) => {
+        if (el.text().includes(productName)) {
+            cy.wrap(el).click()
+        }
+    })
+})
+
+Cypress.Commands.add('selectMenuItem', (itemName) => {
+    cy.visit("https://automationteststore.com/")
+    cy.get("a[href*='product/category&path=']").contains(itemName).click()
+})
+
+Cypress.Commands.add('submitForm', (firstName, lastName, email, body, sel, message) => {
+    cy.get('[name="first_name"]').type(firstName)
+    cy.get('[name="last_name"]').type(lastName)
+    cy.get('[name="email"]').type(email)
+    cy.get('textarea.feedback-input').type(body)
+    cy.get('[type="submit"]').click()
+    cy.get(sel).contains(message)
+})
