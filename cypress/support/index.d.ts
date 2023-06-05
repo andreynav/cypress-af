@@ -19,5 +19,23 @@ declare namespace Cypress {
          * @example cy.selectAutoCompleteOption('#dropdown-checkboxes')
          */
         selectAutoCompleteOption(inputSel: string, submitSel: string, optionName: string): Chainable<JQuery<HTMLElement>>
+
+        /**
+         * Select specific product by a name
+         * @example cy.selectProduct('.fixed_wrapper .prdocutname', 'Seaweed Conditioner')
+         */
+        selectProduct(selector: string, productName: string): Chainable<JQuery<HTMLElement>>
+
+        /**
+         * Select specific menu item by a name
+         * @example cy.selectMenuItem("Hair Care")
+         */
+        selectMenuItem(itemName: string): Chainable<JQuery<HTMLElement>>
+
+        /**
+         * Submit form with user credentials
+         * @example cy.submitForm(first_name, last_name, email, body, 'body', error_response)
+         */
+        submitForm(firstName: string, lastName: string, email: string, body: string, sel: string, message: string): Chainable<JQuery<HTMLElement>>
     }
 }
