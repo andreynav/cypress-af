@@ -37,5 +37,11 @@ declare namespace Cypress {
          * @example cy.submitForm(first_name, last_name, email, body, 'body', error_response)
          */
         submitForm(firstName: string, lastName: string, email: string, body: string, sel: string, message: string): Chainable<JQuery<HTMLElement>>
+
+        /**
+         * Select specific product by a name
+         * @example cy.addProductToBasket('.fixed_wrapper .prdocutname', 'Seaweed Conditioner')
+         */
+        addProductToBasket(selector: string, productName: string): Chainable<JQuery<HTMLElement>>
     }
 }
