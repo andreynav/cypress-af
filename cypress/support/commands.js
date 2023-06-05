@@ -54,6 +54,14 @@ Cypress.Commands.add('selectProduct', (selector, productName) => {
     })
 })
 
+Cypress.Commands.add('addProductToBasket', (selector, productName) => {
+    cy.get(selector).each((el, index) => {
+        if (el.text().includes(productName)) {
+            cy.get('.productcart').eq(index).click()
+        }
+    })
+})
+
 Cypress.Commands.add('selectMenuItem', (itemName) => {
     cy.visit("https://automationteststore.com/")
     cy.get("a[href*='product/category&path=']").contains(itemName).click()
