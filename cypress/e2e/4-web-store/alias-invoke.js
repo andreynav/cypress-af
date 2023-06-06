@@ -1,6 +1,9 @@
 describe("Verifying element alias", () => {
+    beforeEach(() => {
+        cy.visit(Cypress.env('web_store'))
+    })
+
     it('Validate a specific hair care product',  () => {
-        cy.visit("https://automationteststore.com/")
         cy.get("a[href*='product/category&path=']").contains("Hair Care").click()
 
         cy.get('.fixed_wrapper .prdocutname').eq(0).invoke('text').as('productName')
@@ -9,7 +12,6 @@ describe("Verifying element alias", () => {
     })
 
     it('Validate the number of products on home page',  () => {
-        cy.visit("https://automationteststore.com/")
         cy.get('.thumbnail')
             .as('productName')
             .should('have.length', 16)
@@ -26,7 +28,6 @@ describe("Verifying element alias", () => {
             return parseFloat(cleanedString);
         }
 
-        cy.visit("https://automationteststore.com/")
         cy.get('.thumbnail').as('productCard')
         cy.get('@productCard').find('.oneprice').each((element) => {
             cy.log('Element price: ' + parseAmount(element.text()))
@@ -43,7 +44,6 @@ describe("Verifying element alias", () => {
             return parseFloat(amountString.replace(/\$|\s/g, ''))
         }
 
-        cy.visit("https://automationteststore.com/")
         cy.get('.thumbnail').each((productCard) => {
             const priceElement = productCard.find('.oneprice').length > 0 ? '.oneprice' : '.pricenew'
             const currentPrice = parseAmount(productCard.find(priceElement).text())

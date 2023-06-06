@@ -1,6 +1,6 @@
 describe('Test File Upload via webdriveruni', () => {
     before(() => {
-        cy.visit("http://www.webdriveruniversity.com")
+        cy.visit("/")
         cy.openPageInCurrentTab('#file-upload')
     })
 

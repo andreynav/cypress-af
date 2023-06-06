@@ -1,6 +1,6 @@
 describe("Verify checkboxes via webdriveruni", () => {
     beforeEach(() => {
-        cy.visit("http://www.webdriveruniversity.com")
+        cy.visit("/")
         cy.openPageInCurrentTab('#dropdown-checkboxes-radiobuttons')
     })
 

@@ -1,6 +1,6 @@
 describe("Test Contact Us form via WebdriverUniversity", () => {
     beforeEach(function() {
-        cy.visit("https://www.webdriveruniversity.com")
+        cy.visit("/")
         cy.openPageInCurrentTab('#contact-us')
         /**
          * @param {{first_name:string, last_name:string, email:string, body:string, success_response:string,
@@ -12,12 +12,12 @@ describe("Test Contact Us form via WebdriverUniversity", () => {
     })
 
     it("Should not be able to submit a successful submission via contact us form as all fields are required", function() {
-        cy.submitForm(data.first_name,
-            data.last_name,
+        cy.submitForm(Cypress.env('first_name'),
+            this.data.last_name,
             ' ',
-            data.body,
+            this.data.body,
             'body',
-            data.error_response)
+            this.data.error_response)
     })
 
     it("Should be able open form on the same browser tab and submit a successful submission via contact us form", function() {

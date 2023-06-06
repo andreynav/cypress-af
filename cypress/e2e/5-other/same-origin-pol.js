@@ -1,6 +1,6 @@
 describe("Cypress web security", () => {
     it("Validate visiting two different domains", () => {
-        cy.visit('http://www.webdriveruniversity.com/');
+        cy.visit('/');
         cy.visit('https://www.google.com');
     });
 

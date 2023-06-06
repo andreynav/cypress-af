@@ -1,6 +1,6 @@
 describe("Test Contact Us form via WebdriverUniversity", () => {
     beforeEach(() => {
-        cy.visit("https://www.webdriveruniversity.com")
+        cy.visit("/")
         cy.openPageInCurrentTab('#contact-us')
         cy.fixture('contact-us.json').as('userData')
     })

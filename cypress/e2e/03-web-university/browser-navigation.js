@@ -1,6 +1,6 @@
 describe("Validate webdriveruni homepage links", () => {
     it("Confirm links redirect to the correct pages", () => {
-        cy.visit("http://www.webdriveruniversity.com")
+        cy.visit("/")
         cy.openPageInCurrentTab('#contact-us')
         cy.url().should("include", "/Contact-Us/contactus")
 
