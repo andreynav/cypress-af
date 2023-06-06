@@ -1,6 +1,6 @@
 describe("Handling data via webdriveruni", () => {
     beforeEach(() => {
-        cy.visit("http://webdriveruniversity.com/");
+        cy.visit("/");
         cy.get("#data-table").invoke("removeAttr", "target").click({ force: true })
     })
 

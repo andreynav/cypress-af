@@ -1,6 +1,6 @@
 describe("Handle js alerts", () => {
     beforeEach(() => {
-        cy.visit("http://www.webdriveruniversity.com")
+        cy.visit("/")
         cy.openPageInCurrentTab('#popup-alerts')
     })
 

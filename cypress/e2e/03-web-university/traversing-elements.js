@@ -1,6 +1,6 @@
 describe("Traversing DOM elements in Cypress", () => {
     beforeEach(() => {
-        cy.visit("http://webdriveruniversity.com/")
+        cy.visit("/")
         cy.openPageInCurrentTab('#data-table')
     })
 

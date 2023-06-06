@@ -1,6 +1,6 @@
 describe("Verify Autocomplete dropwdown lists via webdriveruni", () => {
     beforeEach(() => {
-        cy.visit("http://www.webdriveruniversity.com")
+        cy.visit("/")
         cy.openPageInCurrentTab('#autocomplete-textfield')
     })
 

@@ -1,6 +1,6 @@
 describe("Handling IFrame & Modals", () => {
     it("Handle webdriveruni iframe and modal", () => {
-        cy.visit("http://www.webdriveruniversity.com")
+        cy.visit("/")
         cy.openPageInCurrentTab('#iframe')
 
         cy.get('#frame').then(($iframe) => {

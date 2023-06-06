@@ -1,6 +1,6 @@
 describe("Test Contact Us form via web store", () => {
     it("Should be able to submit a successful submission via contact us form", () => {
-        cy.visit('https://www.automationteststore.com/')
+        cy.visit(Cypress.env('web_store'))
         cy.xpath('//a[contains(@href, "contact")]').click().then((text) => {
             cy.log(`This is the text ${text.text()}`)
         })
