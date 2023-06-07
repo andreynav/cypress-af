@@ -1,4 +1,4 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require("cypress")
 
 module.exports = defineConfig({
   projectId: 'n3v8do',
@@ -17,5 +17,16 @@ module.exports = defineConfig({
       web_university: "https://www.webdriveruniversity.com",
       web_store: "https://www.automationteststore.com"
     }
-  }
+  },
+  // reporter: 'mochawesome',
+  // reporterOptions: {
+  //   reportDir: 'cypress/results',
+  //   overwrite: false,
+  //   html: false,
+  //   json: true,
+  // },
+  reporter: 'cypress-multi-reporters',
+  reporterOptions: {
+    configFile: 'reporter-config.json',
+  },
 })
