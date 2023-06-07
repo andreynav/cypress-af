@@ -2,7 +2,7 @@
   "first_name": "Andy",
   "last_name": "Nav",
   "email": "nav.testsw@gmail.com",
-  "body": "This the truly feedback message",
+  "comment": "This the truly feedback message",
   "success_response": "Thank You for your Message!",
   "error_response": "Error: Invalid email address",
   "success_url":  "contact-form-thank-you"

@@ -1,11 +1,11 @@
 describe('Test File Upload via webdriveruni', () => {
-    before(() => {
+    beforeEach(() => {
         cy.visit("/")
         cy.openPageInCurrentTab('#file-upload')
     })
 
     it('Upload a file....', () => {
-        cy.get('#myFile').selectFile('cypress/fixtures/laptop.png')
+        cy.get('#myFile').selectFile('cypress/fixtures/webUni/laptop.png')
 
         const stub = cy.stub()
         cy.on('window:alert', stub)

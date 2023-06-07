@@ -1,6 +1,6 @@
 describe("Add multiple items to basket", () => {
     before(function () {
-        cy.fixture("products").as("productData")
+        cy.fixture("webStore/products").as("productData")
     })
 
     beforeEach(function () {
@@ -8,8 +8,8 @@ describe("Add multiple items to basket", () => {
     })
 
     it("Add specific items to basket", () => {
-        cy.get('@productData').then(({productData}) => {
-            productData.forEach((name) => {
+        cy.get('@productData').then((productData) => {
+            productData.productName.forEach((name) => {
                 cy.addProductToBasket('.fixed_wrapper .prdocutname', name)
             })
             cy.get('.cart_total').scrollIntoView().contains('$46.45')
