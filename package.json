@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy-test-all-headless": "npx cypress run",
+    "cy-test-all-headed": "npx cypress run --headed",
+    "cy-test-all-chrome": "npx cypress run --browser chrome",
+    "cy-test-all--dashboard": "npx cypress run --record --key 7c45c0d0-66f7-475d-8ff7-67198c19a39a",
+    "cy-test-webuni": "npx cypress run --spec cypress/e2e/03-web-university/*"
   },
   "author": "Andrei Nalivaika",
   "license": "ISC",
