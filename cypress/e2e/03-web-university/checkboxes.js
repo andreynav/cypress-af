@@ -1,5 +1,7 @@
 describe("Verify checkboxes via webdriveruni", () => {
     beforeEach(() => {
+        cy.log(Cypress.env('name'))
+        cy.log(Cypress.env('baseUrl'))
         cy.visit("/")
         cy.openPageInCurrentTab('#dropdown-checkboxes-radiobuttons')
     })
