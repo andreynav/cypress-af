@@ -35,6 +35,10 @@ module.exports = defineConfig({
       web_store: "https://www.automationteststore.com"
     }
   },
+  "retries": {
+    "runMode": 0,
+    "openMode": 1
+},
   reporter: 'cypress-multi-reporters',
   reporterOptions: {
     configFile: 'reporter-config.json',
