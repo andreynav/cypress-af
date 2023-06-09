@@ -10,6 +10,7 @@
     "cy-test-all--dashboard": "npx cypress run --record --key 7c45c0d0-66f7-475d-8ff7-67198c19a39a",
     "cy-test-webuni": "npx cypress run --spec cypress/e2e/03-web-university/*",
     "cy-test-webuni-dashboard": "npx cypress run --spec cypress/e2e/03-web-university/* --record --key 7c45c0d0-66f7-475d-8ff7-67198c19a39a",
+    "cy-test-onetest": "npx cypress run --spec cypress/e2e/03-web-university/contact-us.js",
     "cy-test-onetest-dashboard": "npx cypress run --spec cypress/e2e/03-web-university/contact-us.js --record --key 7c45c0d0-66f7-475d-8ff7-67198c19a39a",
     "junit-merge": "npx junit-merge -d cypress/results/junit -o cypress/results/junit/results.xml",
     "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
@@ -17,7 +18,8 @@
     "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
     "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
     "cypress-regression-pack": "npm run delete-results && npm run delete-mochawesome-report && npm run triggerAllTests-headless && npm run mochawesome-merge",
-    "cy-test-webuni-staging": "npx cypress run --spec cypress/e2e/03-web-university/* --env configFile=staging"
+    "cy-test-webuni-staging": "npx cypress run --spec cypress/e2e/03-web-university/* --env configFile=staging",
+    "cy-test-onetest-multi-browser": "npm run cy-test-onetest -- --browser electron --headed & npm run cy-test-onetest -- --browser edge --headed"
   },
   "author": "Andrei Nalivaika",
   "license": "ISC",
