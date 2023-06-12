@@ -1,0 +1,8 @@
+/build
+/node_modules
+.idea
+
+cypress/videos
+cypress/screenshots
+cypress/results
+mochawesome-report/*
