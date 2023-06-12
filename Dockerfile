@@ -1,0 +1,16 @@
+ARG CYPRESS_VERSION='12.13.0'
+ARG NODE_VERSION='20.1.0'
+ARG CHROME_VERSION='113.0.5672.92-1'
+ARG FIREFOX_VERSION='113.0'
+ARG YARN_VERSION='1.22.19'
+
+FROM cypress/factory
+
+WORKDIR /tests
+
+ENV TZ=Europe/Minsk
+
+COPY ./cypress.config.js .
+
+ENTRYPOINT ["npx", "cypress", "run"]
+
