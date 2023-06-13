@@ -9,7 +9,7 @@ describe("PUT Request", () => {
                 author: "Tom Jones",
             },
         }).then((response) => {
-            expect(response.status).to.eql(200);
+            expect(response.status).to.eql(200)
         })
     })
 })
