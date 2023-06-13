@@ -1,13 +1,13 @@
 describe("Get Request", () => {
     let response
 
-    it("Validate status code of the /posts api", () => {
+    it("Validate GET status code of the /posts api", () => {
         response = cy.request('http://localhost:80/posts')
         response.its("status").should("equal", 200)
     })
 
-    it.only("Validate post API contains correct keys and values", () => {
-        response = cy.request({
+    it("Validate post API contains correct keys and values", () => {
+        cy.request({
             method: 'GET',
             url: 'http://localhost:80/posts',
             headers: {
