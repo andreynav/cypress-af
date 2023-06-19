@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "Andy NNN"
+    },
+    {
+      "title": "Where can I buy cypress?",
+      "author": "Tom Jones",
+      "id": 2
+    },
+    {
+      "title": "How are you?",
+      "author": "Benny Jones",
+      "id": 3
+    },
+    {
+      "title": "How are you?",
+      "author": "Benny Jones",
+      "id": 4
+    },
+    {
+      "title": ".yzcquacxt2.trqdqp1pr1f",
+      "author": "Benny Jones",
+      "id": 5
+    },
+    {
+      "title": ".27jas7urvwq.8hoahbc1fz6",
+      "author": "Benny Jones",
+      "id": 6
+    },
+    {
+      "title": ".ka1sn2u7fvk.q5e7arkzvc",
+      "author": "Benny Jones",
+      "id": 7
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "body": "Hey there!!!",
+      "postId": 2,
+      "id": 2
+    },
+    {
+      "body": ".90bc1ietqp.t7s5vwdx8r",
+      "postId": 2,
+      "id": 3
+    },
+    {
+      "body": ".1x5w00muyqg.aki2l78zprl",
+      "postId": 2,
+      "id": 4
+    }
+  ],
+  "profile": {
+    "name": "Andrey"
+  }
+}
