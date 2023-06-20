@@ -1,0 +1,24 @@
+version: '3.5'
+services:
+  jenkins:
+    image: jenkins/jenkins
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - ~/Documents/docker/jenkins-test:/var/jenkins_home
+      - ~/.ssh:/var/jenkins_home/.ssh
+    networks:
+      - ngrok
+  cypress:
+    image: cypress/included:latest
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    environment:
+      - DISPLAY=:99
+    command: ["Xvfb", ":99", "-screen", "0", "1920x1080x24", "-ac"]
+    networks:
+      - ngrok
+
+networks:
+  ngrok:
