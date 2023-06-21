@@ -9,7 +9,7 @@ pipeline {
                 git url: 'git@github.com:andreynav/cypress-af.git'
                 sh 'npm install'
                 sh 'npm update'
-                sh 'npm run cy-test-onetest'
+                sh 'npm run $Script'
             }
         }
     }
